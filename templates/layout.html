@@ -1,0 +1,16 @@
+<html>
+
+<head>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
+    <title> Flight Fare </title>
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Flight Fare Prediction</a>
+    </nav>
+    {% block Content %}
+
+    {% endblock %}
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

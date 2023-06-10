@@ -1,0 +1,31 @@
+select name="stops">
+      <option value="none" selected disabled hidden>Select an Option</option>
+      {% for var in mydata['stops'] %}
+      <option value="{{var}}">{{var}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label>Airline</label>
+    <select name="airline">
+      <option value="none" selected disabled hidden>Select an Option</option>
+      {% for var in mydata['air'] %}
+      <option value="{{var}}">{{var}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label>Source</label>
+    <select name="source">
+      <option value="none" selected disabled hidden>Select an Option</option>
+      {% for var in mydata['src'] %}
+      <option value="{{var}}">{{var}}</option>
+      {% endfor %}
+    </select>
+    <br>
+    <label>Destination</label>
+    <select name="destination">
+      <option value="none" selected disabled hidden>Select an Option</option>
+      {% for var in mydata['dest'] %}
+      <option value="{{var}}">{{var}}</option>
+      {% endfor %}
+    </select>
+    <br>

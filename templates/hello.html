@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block Content %}
+<html>
+<head>
+    <title>Flight Booking Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            height: 40px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            height: 40px;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="form-title">Flight Booking Form</h2>
+        <form action="/pred" method="post">
+            <div class="form-group">
+                <label for="departure">Departure:</label>
+                <input type="text" class="form-control" id="departure" placeholder="Enter departure location">
+            </div>
+            <div class="form-group">
+                <label for="arrival">Arrival:</label>
+                <input type="text" class="form-control" id="arrival" placeholder="Enter arrival location">
+            </div>
+            <div class="form-group">
+                <label for="departure-time">Departure Time:</label>
+                <input type="time" class="form-control" id="departure-time">
+            </div>
+            <div class="form-group">
+                <label for="arrival-time">Arrival Time:</label>
+                <input type="time" class="form-control" id="arrival-time">
+            </div>
+            <div class="form-group">
+                <label for="airline">Airline:</label>
+                <input type="text" class="form-control" id="airline" placeholder="Enter airline name">
+            </div>
+            <div class="form-group">
+                <label for="stops">Stops:</label>
+                <select class="form-control" id="stops">
+                    <option value="0">Non-stop</option>
+                    <option value="1">1 stop</option>
+                    <option value="2">2 stops</option>
+                    <option value="3">3 stops</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Book Now</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock%}

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block Content %}
+<html>
+  <head>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3"> </div>
+      <div class="col-sm-6"> 
+
+        <form action="/pred" method="post" for="form">
+          {% for var in range(0,mydata|length) %}
+          <label>{{mydata[var][0]}}</label>
+          <select name="{{mydata[var][0]}}" class="form-control">
+            <option value="none" selected disabled hidden>Select an Option</option>
+            {% for j in mydata[var][1] %}
+            <option name="{{j}}">{{j}}</option>
+            {% endfor %}
+          </select>
+        
+          {%endfor%}
+          <label>Departure Date</label>
+          <input type="date" name="depday"  class="form-control">
+          <label>Departure Time</label>
+          <input type="time" name="deptime"  class="form-control">
+          <label>Arrival Time</label>
+          <input type="time" name="artime"  class="form-control">
+          <br>
+          <input type="submit" class="btn btn-danger btn-md">
+        </form>
+        {% if pred!=0 %}
+             <strong>Predicted amount-<span class="text-danger">₹{{pred}}</span></strong>
+             <br/>
+             <strong>Model prediction accuracy upto-{{acc}}%</strong>  
+
+        {% endif %}
+        <br>
+
+        
+      </div>
+      <div class="col-sm-3"> </div>
+
+    </div>
+  </div>
+</body>
+</html>
+{% endblock%}
