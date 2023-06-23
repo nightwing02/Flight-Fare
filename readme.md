@@ -1,14 +1,78 @@
+# Flight Fare Prediction
 
-## Flight-Fare 
+This project focuses on predicting flight fares using machine learning techniques. It encompasses the necessary steps to preprocess the data, including encoding categorical data to numerical, training a model, storing it using Pickle, and deploying it on Flask to create a web application for flight fare prediction.
 
-A brief description of what this project does and who it's for
-In this project, I developed a flight fare prediction model using Python and deployed it on a local host using the Flask web framework. The model utilizes the Random Forest Regressor algorithm from the scikit-learn library and incorporates essential libraries such as NumPy, Pandas,and Matplotlib.
+## Dataset
 
-## Key Features:
-1. Data Collection and Preparation: Gathered a comprehensive dataset of historical flight data, including features like departure and arrival locations, travel dates, airline information, and corresponding fare prices. Performed data preprocessing tasks, such as handling missing values, feature engineering, and data transformation, using Pandas and NumPy.
-2. Exploratory Data Analysis (EDA): Conducted EDA to gain insights into the dataset and understand the relationships between different variables. Utilized Matplotlib to create visualizations, such as scatter plots, bar charts, and histograms, to analyze the distribution of fare prices and identify patterns or correlations in the data.
-3. Model Development: Utilized the Random Forest Regressor algorithm from the scikit-learn library to build the flight fare prediction model. This ensemble learning method combines multiple decision trees to make accurate predictions.
-4. Flask Web Application: Developed a user-friendly web application using the Flask framework to deploy the trained flight fare prediction model on a local host. 
-5. User Interface: Designed an intuitive user interface that allows users to input relevant flight information, such as departure and arrival locations, travel dates, and airline preferences. Implemented data validation to ensure proper input format and handled potential errors or exceptions gracefully.
-6. Prediction and Results: Utilized the trained Random Forest Regressor model to predict the flight fare based on the user's inputs. Displayed the predicted fare price to the user along with any additional relevant information, such as the airline, travel duration, or other useful details.
+The flight fare dataset used in this project contains various features related to flights, such as departure and arrival locations, date and time of travel, airline information, and other relevant details. The dataset has been preprocessed to handle missing values, perform feature engineering, and encode categorical data into numerical format.
 
+## Data Preprocessing
+
+To ensure optimal model performance, the dataset has undergone preprocessing steps. Categorical features have been encoded into numerical format using techniques like one-hot encoding, label encoding, or target encoding. Missing values have been handled appropriately, and feature engineering techniques may have been applied to create additional meaningful features.
+
+## Model Training
+
+The flight fare prediction model has been trained using machine learning algorithms, such as random forests, gradient boosting, or regression models. The preprocessed dataset has been split into training and testing sets, and model hyperparameters have been tuned to achieve the best possible performance.
+
+## Model Persistence with Pickle
+
+The trained model has been serialized and stored using Pickle, a Python library for object serialization. The serialized model file is utilized for prediction in the Flask web application.
+
+## Flask Web Application
+
+The Flask framework has been leveraged to develop a web application that enables users to input flight details and obtain a prediction of the fare for their desired flight. The serialized model is loaded into the application and used to make real-time predictions based on user inputs.
+
+## Prerequisites
+
+To run the Flight Fare Prediction project locally, you need to have the following dependencies installed:
+
+- Python 3.x
+- Flask
+- Scikit-learn
+- Pandas
+- Pickle
+
+## Usage
+
+1. Clone the repository:
+
+```
+git clone https://github.com/your-username/flight-fare-prediction.git
+```
+
+2. Install the required dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+3. Start the Flask web application:
+
+```
+python app.py
+```
+
+4. Access the web application in your browser at `http://localhost:5000`.
+
+5. Enter the flight details in the provided form and submit it to obtain the fare prediction.
+
+## Future Improvements
+
+- Incorporate additional data sources, such as weather information or historical flight data, to enhance the accuracy of fare predictions.
+- Implement advanced feature engineering techniques to extract more meaningful information from the available flight data.
+- Enhance the user interface and add additional functionalities to the web application.
+- Integrate with a database for storing user data and maintaining a history of fare predictions.
+
+Feel free to contribute to this project by submitting bug reports, feature requests, or pull requests.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+
+## Acknowledgments
+
+- The flight fare dataset obtained from sklearn.dataset.
+- Flask: A lightweight web application framework for Python.
+- Scikit-learn: A powerful machine learning library in Python.
+- Pandas: A versatile data manipulation library in Python.
+- Pickle: A Python module for object serialization.
